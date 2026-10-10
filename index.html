@@ -1,0 +1,123 @@
+
+<!DOCTYPE html> 
+
+<html lang="en"> 
+
+<head> 
+  <meta charset="UTF-8"> 
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>Weather Dashboard</title> <!-- Title shown in the browser tab -->
+
+</head> 
+
+<body> 
+
+  <main class="container"> <!-- main container of my application -->
+
+    <header>
+
+      <h1>Weather Dashboard 🌦️</h1> <!-- main title of my application -->
+
+      <p>Check the current weather in any city.</p> <!-- description of my application -->
+
+    </header> 
+
+    <form id="weather-form"> <!-- used to search for a city -->
+
+      <label for="city-input">Enter a city:</label> <!-- for the city input -->
+
+      <div class="search-box"> <!-- for the input and search button -->
+
+        <input
+          type="text"
+          id="city-input"
+          placeholder="e.g. Beirut"
+          required
+        > <!-- input where the user enters a city name -->
+
+        <button type="submit" id="search-btn"> <!-- button that submits the form -->
+
+          Search 
+
+        </button> 
+
+      </div> 
+
+    </form> 
+
+    <p id="status" role="status" aria-live="polite"> <!-- area for loading and error messages -->
+
+      Enter a city to see the weather. <!-- message shown before searching -->
+
+    </p> 
+
+    <button id="retry-btn" type="button" hidden> <!-- hidden button used to retry after an error -->
+
+      Try again <!-- text displayed on the retry button -->
+
+    </button> 
+
+    <section id="weather-result" hidden> <!-- hidden section that will display weather results -->
+
+      <h2 id="city-name"></h2> <!-- display the name of the city -->
+
+      <div class="current-weather"> <!-- container for the current weather -->
+
+        <span id="weather-icon" role="img"></span> <!-- display the weather icon -->
+
+        <div>
+
+          <h3 id="temperature"></h3> <!-- display the current temperature -->
+
+          <p id="description"></p> <!-- display the weather description -->
+
+        </div> 
+
+      </div> 
+
+      <div class="details"> <!-- for additional weather information -->
+
+        <div class="detail-card"> <!-- for humidity -->
+
+          <h4>Humidity</h4> <!-- Humidity title -->
+
+          <p id="humidity"></p> <!-- display the humidity percentage -->
+
+        </div> 
+
+        <div class="detail-card"> <!-- for wind speed -->
+
+          <h4>Wind Speed</h4> <!-- Wind speed title -->
+
+          <p id="wind"></p> <!-- display the wind speed -->
+
+        </div> 
+
+        <div class="detail-card"> <!-- for feels-like temperature -->
+
+          <h4>Feels Like</h4> <!-- Feels-like title -->
+
+          <p id="feels-like"></p> <!-- display the feels-like temperature -->
+
+        </div> 
+
+      </div> 
+
+    </section> 
+
+    <footer> 
+
+      <p>Weather data provided by Open-Meteo</p> <!-- show the API provider -->
+
+    </footer> 
+
+  </main> 
+
+  <script type="module" src="/src/main.js"></script> <!-- connect my JavaScript file and allow imports -->
+
+</body> 
+
+</html> 
+
